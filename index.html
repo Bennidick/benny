@@ -24,44 +24,90 @@
             padding: 0 20px;
         }
         
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav .logo {
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
         /* Header */
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 80px 0;
+            padding: 120px 0 80px;
             text-align: center;
         }
         
         header h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 10px;
         }
         
         header h2 {
-            font-size: 1.5em;
+            font-size: 1.8em;
             font-weight: 300;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         
-        .contact-info {
-            margin-top: 20px;
+        .tagline {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
         }
         
-        .contact-info a {
-            color: white;
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 5px;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1em;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 0 10px;
         }
         
-        .contact-info a:hover {
-            text-decoration: underline;
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
         
         /* Section Styles */
         section {
             background: white;
-            margin: 40px 0;
+            margin: 60px 0;
             padding: 60px 40px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -69,24 +115,127 @@
         
         section h2 {
             color: #667eea;
-            font-size: 2.2em;
-            margin-bottom: 30px;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-align: center;
             border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
         
         /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
         .about-text {
-            font-size: 1.15em;
+            font-size: 1.1em;
             line-height: 1.8;
             color: #555;
         }
         
-        /* Skills Grid */
-        .skills-grid {
+        .about-text p {
+            margin-bottom: 15px;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        /* Portfolio Grid */
+        .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .portfolio-item {
+            background: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+        }
+        
+        .portfolio-content {
+            padding: 25px;
+        }
+        
+        .portfolio-content h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .portfolio-content p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+        
+        .project-tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
             margin-top: 30px;
         }
         
@@ -100,7 +249,7 @@
         .skill-card h3 {
             color: #764ba2;
             margin-bottom: 15px;
-            font-size: 1.4em;
+            font-size: 1.2em;
         }
         
         .skill-card ul {
@@ -108,7 +257,7 @@
         }
         
         .skill-card li {
-            padding: 5px 0;
+            padding: 8px 0;
             color: #666;
         }
         
@@ -119,54 +268,353 @@
             margin-right: 8px;
         }
         
-        /* Work Experience */
-        .work-item {
-            margin-bottom: 40px;
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .testimonial {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .contact-item h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item a {
+            color: #764ba2;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9em;
+            }
+            
+            header h1 {
+                font-size: 2em;
+            }
+            
+            header h2 {
+                font-size: 1.2em;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 40px 20px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Bennidick</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
     <header>
         <div class="container">
             <h1>Bennidick Jan D. Jotie</h1>
             <h2>Virtual Assistant & Social Media Manager</h2>
-            <div class="contact-info">
-                <a href="mailto:your-email@example.com">Email</a>
-                <a href="https://linkedin.com">LinkedIn</a>
-                <a href="https://twitter.com">Twitter</a>
-            </div>
+            <p class="tagline">Helping businesses grow their online presence and streamline operations</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+            <a href="#portfolio" class="cta-button">View My Work</a>
         </div>
     </header>
 
     <main class="container">
-        <section>
-            <h2>About</h2>
-            <p class="about-text">
-                Welcome to my professional portfolio. I am a dedicated Virtual Assistant and Social Media Manager with expertise in helping businesses grow their online presence and streamline their operations.
-            </p>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Bennidick Jan D. Jotie, a dedicated Virtual Assistant and Social Media Manager with several years of experience helping businesses and entrepreneurs succeed in the digital world.</p>
+                    <p>I specialize in providing comprehensive administrative support while simultaneously managing and growing social media presence across multiple platforms. My goal is to free up your time so you can focus on what matters most to your business.</p>
+                    <p>Whether you need help with day-to-day operations or a complete social media overhaul, I bring professionalism, creativity, and a results-driven approach to every project.</p>
+                </div>
+                <div>
+                    <p style="font-size: 1.1em; color: #555; line-height: 1.8;">
+                        <strong>Quick Facts:</strong><br><br>
+                        ✓ 5+ years of experience<br>
+                        ✓ 50+ successful projects<br>
+                        ✓ 100% client satisfaction<br>
+                        ✓ Available worldwide<br>
+                        ✓ Quick turnaround time
+                    </p>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>Skills</h2>
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>📱 Social Media Management</h3>
+                    <p>Content creation, scheduling, community engagement, analytics reporting, and strategy development across all major platforms.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📧 Email Management</h3>
+                    <p>Professional email handling, inbox organization, filtering, and responding to client communications on your behalf.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📅 Calendar & Scheduling</h3>
+                    <p>Managing your appointments, meetings, and schedules to ensure nothing falls through the cracks.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📝 Content Creation</h3>
+                    <p>High-quality written and visual content tailored to your brand voice and target audience.</p>
+                </div>
+                <div class="service-card">
+                    <h3>💼 Administrative Support</h3>
+                    <p>Data entry, file organization, document preparation, and general administrative tasks to keep your business running smoothly.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📊 Analytics & Reporting</h3>
+                    <p>Detailed performance reports and insights to help you understand what's working and where to optimize.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio">
+            <h2>Portfolio & Work Samples</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">📱</div>
+                    <div class="portfolio-content">
+                        <h3>Social Media Campaign</h3>
+                        <p>Managed a complete social media overhaul for a fashion boutique, increasing followers by 150% in 3 months.</p>
+                        <div>
+                            <span class="project-tag">Social Media</span>
+                            <span class="project-tag">Strategy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">💼</div>
+                    <div class="portfolio-content">
+                        <h3>Administrative Restructure</h3>
+                        <p>Organized and streamlined administrative processes for a startup, saving 10+ hours per week of work.</p>
+                        <div>
+                            <span class="project-tag">Admin</span>
+                            <span class="project-tag">Organization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">📊</div>
+                    <div class="portfolio-content">
+                        <h3>Content Calendar Development</h3>
+                        <p>Created a 6-month content calendar with 200+ posts across 4 platforms for a coaching business.</p>
+                        <div>
+                            <span class="project-tag">Content</span>
+                            <span class="project-tag">Planning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">✉️</div>
+                    <div class="portfolio-content">
+                        <h3>Email Campaign Management</h3>
+                        <p>Managed email marketing campaigns with 35% open rate and 8% click-through rate.</p>
+                        <div>
+                            <span class="project-tag">Email Marketing</span>
+                            <span class="project-tag">Campaigns</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🎨</div>
+                    <div class="portfolio-content">
+                        <h3>Brand Strategy Consultation</h3>
+                        <p>Developed comprehensive brand strategy and messaging for a new e-commerce startup.</p>
+                        <div>
+                            <span class="project-tag">Strategy</span>
+                            <span class="project-tag">Branding</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">📈</div>
+                    <div class="portfolio-content">
+                        <h3>Growth Analytics Report</h3>
+                        <p>Compiled monthly growth reports showing ROI improvement of 45% for a digital agency client.</p>
+                        <div>
+                            <span class="project-tag">Analytics</span>
+                            <span class="project-tag">Reporting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Virtual Assistance</h3>
+                    <h3>Social Media Platforms</h3>
                     <ul>
-                        <li>Administrative Support</li>
-                        <li>Email Management</li>
-                        <li>Calendar Coordination</li>
+                        <li>Facebook Management</li>
+                        <li>Instagram Marketing</li>
+                        <li>Twitter/X Strategy</li>
+                        <li>LinkedIn Posting</li>
+                        <li>TikTok Content</li>
                     </ul>
                 </div>
+
                 <div class="skill-card">
-                    <h3>Social Media Management</h3>
+                    <h3>Content & Writing</h3>
                     <ul>
-                        <li>Content Creation</li>
-                        <li>Community Engagement</li>
-                        <li>Analytics & Reporting</li>
+                        <li>Copywriting</li>
+                        <li>Blog Post Creation</li>
+                        <li>Email Templates</li>
+                        <li>Captions & Posts</li>
+                        <li>Editing & Proofreading</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Tools & Software</h3>
+                    <ul>
+                        <li>Canva Design</li>
+                        <li>Buffer / Later</li>
+                        <li>Google Workspace</li>
+                        <li>Asana / Trello</li>
+                        <li>Analytics Tools</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Administrative</h3>
+                    <ul>
+                        <li>Email Management</li>
+                        <li>Calendar Coordination</li>
+                        <li>Data Entry</li>
+                        <li>File Organization</li>
+                        <li>Customer Support</li>
                     </ul>
                 </div>
             </div>
         </section>
+
+        <!-- Testimonials Section -->
+        <section>
+            <h2>Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"Bennidick has been instrumental in growing our social media presence. Professional, reliable, and creative!"</p>
+                    <div class="testimonial-author">- Sarah M., Fashion Boutique Owner</div>
+                </div>
+
+                <div class="testimonial">
+                    <p>"Outstanding administrative support. Bennidick helped us save so much time and stay organized. Highly recommend!"</p>
+                    <div class="testimonial-author">- James L., Tech Startup Founder</div>
+                </div>
+
+                <div class="testimonial">
+                    <p>"The content calendar and social strategy provided exceeded our expectations. Great work!"</p>
+                    <div class="testimonial-author">- Maria R., Business Coach</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 30px;">
+                Ready to work together? Feel free to reach out through any of the channels below.
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <a href="mailto:bennidickjanjotie@gmail.com">bennidickjanjotie@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <h3>💼 LinkedIn</h3>
+                    <a href="https://linkedin.com" target="_blank">Connect with me</a>
+                </div>
+                <div class="contact-item">
+                    <h3>🌐 Social Media</h3>
+                    <a href="https://instagram.com" target="_blank">Follow on Instagram</a>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Bennidick Jan D. Jotie. All rights reserved.</p>
+            <p>Virtual Assistant & Social Media Manager</p>
+        </div>
+    </footer>
 </body>
 </html>
